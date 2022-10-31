@@ -218,3 +218,9 @@
 
 # expex forward references with \gathertags
 **/*-tags.tex
+
+# misc
+**/*.bat
+**/src.pdf
+**/*.xmpdata
+**/*.xmpi
