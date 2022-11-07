@@ -114,16 +114,16 @@
     linkcolor=RoyalBlue,
     citecolor=webgreen,
     %pagecolor=RoyalBlue,
-    urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
 }
 
 %**************************************************************
 % Impostazioni di itemize
 %**************************************************************
-\renewcommand{\labelitemi}{$\ast$}
+%\renewcommand{\labelitemi}{$\ast$}
 
 %\renewcommand{\labelitemi}{$\bullet$}
-%\renewcommand{\labelitemii}{$\cdot$}
+\renewcommand{\labelitemii}{$\cdot$}
 %\renewcommand{\labelitemiii}{$\diamond$}
 %\renewcommand{\labelitemiv}{$\ast$}
 
@@ -244,3 +244,11 @@
 }
 
 \newcommand{\classdesc}[2]{\item[\textbf{#1:}] #2}
+
+\lstnewenvironment{code}[1][]%
+{
+    \noindent
+    \minipage{\linewidth} 
+    \vspace{0.5\baselineskip}
+    \lstset{basicstyle=\ttfamily\footnotesize,frame=single,#1}}
+  {\endminipage}

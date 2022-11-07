@@ -7,4 +7,109 @@
 \label{cap:descrizionestage}
 %**************************************************************
 
-Descrizione dello stage: obiettivi, requisiti e pianificazione.
+\section{Il progetto}
+
+L'azienda ha già iniziato a sviluppare un'applcazione web, denominata \emph{Timesheet}, desitinata a uso interno, al fine di rendicontare e pianificare le attività dei vari componenti dell'azienda. \\
+In particolare è già implementata la funzionalità di inserire attività singole nel database. \\
+Manca, invece, la possibilità di mostrare, filtrandole a seconda della volontà dell'utente, le varie attività memorizzate, ottenendo quindi dati utili come la quantità di ore dedicate a un cliente in un determinato arco di tempo. \\
+Queste funzionalità dovranno essere raggruppate nella sezione \emph{Reports} dell'applicazione. \\
+Lo scopo finale del progetto è quindi quello di completare la sezione \emph{Reports}, sia per quanto riguarda la componente di frontend che per quella di backend.
+
+\section{Requisiti}
+
+Nel piano di lavoro sono stati redatti requisiti specifici che dovranno essere soddisfatti nel periodo di stage. Essi sono categorizzati in base alla importanza che ricoprono:
+
+
+\paragraph{Obbligatori} Requisiti ad alta priorità, la cui importanza è primaria per la riuscita del progetto:
+
+\begin{itemize}
+  \item apprendimento delle tecnologie di sviluppo come React e Node.js e per il versionamento del progetto come git;
+  \item gestione filtri avanzati di ricerca delle attività;
+  \item visualizzazione a tabella delle attività filtrate;
+  \item generazione file CSV delle attività filtrate.
+\end{itemize}
+
+\paragraph{Desiderabili} Requisiti a media priorità, non nececssari per il completamento dello stage ma che comunque, se soddisfatti, contribuiscono notevolmente alla buona riuscita del progetto: 
+
+\begin{itemize}
+  \item generazione file PDF delle attività filtrate;
+  \item visualizzazione attività tramite grafico;
+  \item salvataggio preset filtri per ricerche future.
+\end{itemize} 
+
+\paragraph{Facoltativi} Requisiti a bassa priorità, portano un valore aggiunto allo stage:
+
+\begin{itemize}
+  \item visualizzazione widget laterale con statistiche relative all'utente;
+  \item gestione responsive della piattaforma.
+\end{itemize}
+
+\section{Pianificazione}
+
+Lo stage ha avuto luogo nel periodo di tempo dal 25 Luglio 2022 al 16 Settembre 2022, per un totale di 312 ore.
+Sono state inoltre definite delle attività specifiche per ogni settimana di stage, rappresentate di seguito:
+
+\paragraph{Prima settimana}
+
+\begin{itemize}
+  \item discussione requisiti relativi al sistema da sviluppare con le persone coinvolte nel progetto;
+  \item introduzione alla cultira aziendale;
+  \item formazione sulle tecnologie adottate;
+  \item prendere confidenza con la struttura già esistente e assegnazione degli strumenti necessari;
+  \item analisi dei requisiti.
+\end{itemize}
+
+\noindent\textbf{Seconda settimana}
+
+\begin{itemize}
+  \item analisi dei requisiti;
+  \item progetazione architetturale.
+\end{itemize}
+
+\noindent\textbf{Terza settimana}
+
+\begin{itemize}
+  \item progettazione architetturale;
+  \item analisi e definizione user stories per lo sprint successivo.
+\end{itemize}
+
+\noindent\textbf{Dalla quarta alla ottava settimana}
+
+\begin{itemize}
+  \item sviluppo delle user stories assegnate;
+  \item sprint review con il referente e le altre persone coinvolte nel progetto;
+  \item analisi e definizione user stories per lo sprint successivo.
+\end{itemize}
+
+\noindent Inoltre, nell'ultima settimana, è previsto un collaudo finale di ciò che è stato fatto.
+
+\section{Tecnologie utilizzate}
+
+È stato utilizzato lo stack tecnologico tipicamente scelto dall'azienda, composto da: \emph{Ract}, \emph{Node.js} e \emph{MongoDB}, di seguito descritte nel dettaglio, una per una.
+
+\subsection{React}
+
+React\footcite{site:react} è una libreria Javascript open-source component-based per creare interfacce utente mantenuta da \emph{Meta}. Adotta l'utilizzo di una sintassi che estende il linguaggio Javascript: il \emph{Javascript Synstax Extension} (JSX), che rende semplice e intuitivo creare i componenti che formano la pagina.\\
+\begin{code}[frame=tb,title={Esempio di utlizzo di codice JSX}]
+  const name = 'Riccardo Pavan';
+
+  const ShowName = () => {
+    return (
+      <div>Mi chiamo {name}</div>
+    );
+  };
+
+\end{code}
+
+Un'altra particolarità di React sono gli \emph{hooks}, particolari funzioni che permettono di "agganciarsi" a varie funzionalità di \emph{lifecycle} che React offre senza dovere usare classi.
+
+\subsection{Node.Js}
+
+Node.Js\footcite{site:node.js} è un \emph{runtime environment} open-source basato su Javascript.\\
+La sua architettura orientata agli eventi permette alle operazioni di input/output di essere asincrone ed è consona soprattutto per applicazioni scalabili e che necessitano di un grande \emph{throughput} .\\
+L'utilizzo di Node.Js permette di utilizzare Javascript anche lato server, permettendo quindi di usarlo come unico linguaggio nello sviluppo di un'applicazione web, dando vita al paradigma detto \emph{Javascript everywhere}.\\
+
+\subsection{MongoDB}
+
+MongoDB\footcite{site:mongo} è un \emph{database manaegement system} open-source non relazionale, orientato ai documenti, questi ultimi in formato BSON, simile a JSON.\\
+La struttura non relazionale permette una maggiore libertà nello strutturare il database, utile quando si ha a che fare con molti dati molto diversi fra loro e che tendono a cambiare nel tempo.
