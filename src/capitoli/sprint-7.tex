@@ -30,9 +30,9 @@ Come utente autenticato che si trova nella sezione “Reports” e che sta espor
 \end{itemize}
 
 \section{Esportazione report in formato PDF}
-Per la creazione di file PDF mi è stato consigliato l'utilizzo di due librerie: \texttt{puppeteer}\footcite{site:puppeteer} e \texttt{Handlebars.js}\footcite{site:handlebars}.\\
-La prima permette di utilizzare una versione \textit{headless} (senza interfaccia utente) di un browser (in questo caso Chrome), la seconda, invece, mette a disposizione un linguaggio di templating HTML. L'idea è quindi di creare un template riutilizzabile per i report tramite \texttt{Handlebars.js}, per poi generarne un PDF tramite \texttt{puppeteer}, che verrà esportato.\\
-Ho quindi creato il template tramite \texttt{Handlebars.js} che è risultato molto comodo e semplice grazie alle funzioni che la libreria mette a disposizione.
+Per la creazione di file PDF mi è stato consigliato l'utilizzo di due librerie: puppeteer\footcite{site:puppeteer} e Handlebars.js\footcite{site:handlebars}.\\
+La prima permette di utilizzare una versione \textit{headless} (senza interfaccia utente) di un browser (in questo caso Chrome), la seconda, invece, mette a disposizione un linguaggio di templating HTML. L'idea è quindi di creare un template riutilizzabile per i report tramite Handlebars.js, per poi generarne un PDF tramite puppeteer, che verrà esportato.\\
+Ho quindi creato il template tramite Handlebars.js che è risultato molto comodo e semplice grazie alle funzioni che la libreria mette a disposizione.
 
 \begin{code}[frame=tb,title={Esempio di utilizzo di Handlebars.js}]
 1 {{#each people}}
@@ -45,7 +45,7 @@ Ho quindi creato il template tramite \texttt{Handlebars.js} che è risultato mol
 \end{code}\\\\
 
 \noindent L'esempio mostrato genererà, per ogni elemento presente in \texttt{people}, due tag \texttt{span} contenenti rispettivamente il valore della corrente iterazione di \texttt{people.firstName} e \texttt{people.lastName}, ma il secondo verrà generato solo se il campo \texttt{lastName} effettivamente esiste.\\
-Una volta creato il template bisogna compilarlo tramite la funzione \texttt{compile()} di \texttt{Handlebars.js} per permettere a \texttt{puppeteer} di generare il relativo file PDF.
+Una volta creato il template bisogna compilarlo tramite la funzione \texttt{compile()} di Handlebars.js per permettere a puppeteer di generare il relativo file PDF.
 
 \begin{code}[frame=tb,title={Esempio di utilizzo di puppeteer per la creazione di file PDF}]
 1   const template = Handlebars.compile(htmlTemplate);
