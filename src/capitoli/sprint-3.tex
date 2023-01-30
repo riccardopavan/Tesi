@@ -8,7 +8,20 @@
 %**************************************************************
 \section{User stories assegnate}
 Anche se inizialmente era un'attività prevista per la quarta settimana ho iniziato a lavorare effettivamente al progetto durante il terzo sprint. \\
-Utilizzando il documento precedentemente menzionato previste mi sono state assegnate le user stories da completare durante la settimana, elencate di seguito con tanto di descrizione di task:
+Utilizzando il documento precedentemente menzionato previste mi sono state assegnate le user stories da completare durante la settimana, elencate di seguito seguendo la forma:
+
+\paragraph{Titolo user story (Tempo previsto per concludere la user story)}\mbox{} \\[\baselineskip]
+\noindent Descrizione dela user story. \\
+
+\noindent Tasks:
+
+\begin{itemize}
+  \item Task1;
+  \begin{itemize}
+    \item subTask1;
+  \end{itemize}
+\end{itemize}
+\vspace*{5pt}
 \paragraph{Visualizzazione tabella (5)}\mbox{} \\[\baselineskip]
 \noindent Come utente autenticato che si trova nella sezione “Reports”, voglio poter vedere la tabella riassuntiva delle ore spese. \\
 
@@ -37,19 +50,19 @@ Utilizzando il documento precedentemente menzionato previste mi sono state asseg
 A tal scopo ho aggiunto sia il percorso per raggiungere la sezione, \texttt{/reports}, al file contenente i routing privati dell'applicazione e ho creato il componente principale alla base della sezione Reports, per ora contenente solo il titolo.\\
 Per permettere l'ottenimento dei dati, a lato frontend ho fatto uso di tre degli hooks che React già offre di base: \texttt{useState}, \texttt{useEffect} e \texttt{useCallback}, come nell'esempio che segue: \\
 \begin{code}[frame=tb,title={Esempio di fetch dati da backend e memorizzazione in React state}]
-  const [data, setData] = useState([]);
-
-  const fetchData = useCallback(async () => {
-    const resultData = await
-    /* Logica per la richiesta dei dati */
-    if (resultData) {
-      setData(resultData);
-    }
-  })
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+1   const [data, setData] = useState([]);
+2 
+3   const fetchData = useCallback(async () => {
+4     const resultData = await
+5     /* Logica per la richiesta dei dati */
+6     if (resultData) {
+7       setData(resultData);
+8     }
+9    })
+10
+11  useEffect(() => {
+12    fetchData();
+13  }, [fetchData]);
 \end{code}\\\\
 
 \noindent \texttt{useEffect} indica che \texttt{fetchData} verrà chiamata dopo ogni rendering del componente, la quale otterrà i dati da mostrare in formato tabellare, che verranno salvati nel React state \texttt{data} tramite \texttt{useState}.

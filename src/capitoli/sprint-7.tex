@@ -8,4 +8,67 @@
 %**************************************************************
 
 %**************************************************************
-Descrizione del settimo sprint.
+\section{User stories assegnate}
+
+\paragraph{Esportazione report in formato PDF (8)}\mbox{} \\[\baselineskip]
+Come utente autenticato che si trova nella sezione “Reports”, voglio poter esportare il report correntemente mostrato in un file PDF.
+Esso dovrà contenere la tabella e il grafico mostrati nel report.\\
+
+\noindent Tasks:
+\begin{itemize}
+  \item aggiungere opzione per eseportare la tabella in formato PDF;
+  \item aggiungere logica per la generazione del file PDF lato backend.
+\end{itemize}
+
+\paragraph{Inclusione/esclusione colonne (3)}\mbox{} \\[\baselineskip]
+Come utente autenticato che si trova nella sezione “Reports” e che sta esportando il proprio report, voglio poter selezionare quali colonne includere e quali no nel file PDF/CSV generato.\\
+
+\noindent Tasks:
+\begin{itemize}
+  \item Aggiungere un modale dopo avere selezionato il tipo di file da generare che permetta di scegliere quali colonne escludere;
+  \item Aggiungere logica per riflettere le scelte fatte nel file generato.
+\end{itemize}
+
+\section{Esportazione report in formato PDF}
+Per la creazione di file PDF mi è stato consigliato l'utilizzo di due librerie: \texttt{puppeteer}\footcite{site:puppeteer} e \texttt{Handlebars.js}\footcite{site:handlebars}.\\
+La prima permette di utilizzare una versione \textit{headless} (senza interfaccia utente) di un browser (in questo caso Chrome), la seconda, invece, mette a disposizione un linguaggio di templating HTML. L'idea è quindi di creare un template riutilizzabile per i report tramite \texttt{Handlebars.js}, per poi generarne un PDF tramite \texttt{puppeteer}, che verrà esportato.\\
+Ho quindi creato il template tramite \texttt{Handlebars.js} che è risultato molto comodo e semplice grazie alle funzioni che la libreria mette a disposizione.
+
+\begin{code}[frame=tb,title={Esempio di utilizzo di Handlebars.js}]
+1 {{#each people}}
+2   <span>{{this.firstName}}</span> 
+3   {{#if this.lastName}}
+4     <span>{{this.lastName}}</span>
+5   {{/if}}
+6   <br>
+7 {{/each}} 
+\end{code}\\\\
+
+\noindent L'esempio mostrato genererà, per ogni elemento presente in \texttt{people}, due tag \texttt{span} contenenti rispettivamente il valore della corrente iterazione di \texttt{people.firstName} e \texttt{people.lastName}, ma il secondo verrà generato solo se il campo \texttt{lastName} effettivamente esiste.\\
+Una volta creato il template bisogna compilarlo tramite la funzione \texttt{compile()} di \texttt{Handlebars.js} per permettere a \texttt{puppeteer} di generare il relativo file PDF.
+
+\begin{code}[frame=tb,title={Esempio di utilizzo di puppeteer per la creazione di file PDF}]
+1   const template = Handlebars.compile(htmlTemplate);
+2   const html = template(data);  
+3   /*data contiene i dati che voglio mostrare nel report*/
+4   const browser = await puppeteer.launch();
+5   const page = await browser.newPage();
+6 
+7   await page.setContent(html, { waitUntil: "domcontentloaded" });
+8 
+9   const pdf = await page.pdf({
+10     /*Opzioni di stile*/
+11  });
+12  await browser.close();
+13  return pdf.toString("base64");
+\end{code}\\\\
+
+\noindent Nell'esempio si può vedere come il browser headless venga lanciato (riga 4), venga creata una nuova pagina (riga 5), ne venga impostato il contenuto con l'HTML generato (riga 7) e ne venga generato il PDF (riga 9).\\
+Una volta generato il PDF, esso viene mandato al client per poi essere scaricato.
+
+\section{Inclusione/esclusione colonne}
+Per questa user story la gran parte del lavoro è stata fatta nel frontend: ho fatto in modo che, una volta selezionato che si vuole esportare il file come CSV/PDF si aprisse una modale in cui l'utente può selezionare quali colonne includere o escludere, tramite delle spunte, e poi ho aggiornato la chiamata al backend in modo che mandasse anche queste scelte.\\
+Nel backend è stato sufficiente rendere condizionale la creazione di ogni colonna di dati.
+
+\section{Sprint review}
+La sprint review si è conclusa in modo positivo, con solo dei miglioramenti estetici da fare ai documenti PDF creati per il prossimo sprint. Anche la correzione fatta al bug sorto durante la sprint review precedente è stata soddisfacente. 
