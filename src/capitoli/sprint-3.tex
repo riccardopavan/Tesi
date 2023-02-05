@@ -102,7 +102,7 @@ L'endpoint \texttt{/reports} richiede inoltre dei query params aggiuntivi:
   \item \texttt{token}: il token di accesso dell'utente.
 \end{itemize}
 
-A lato backend ho aggiunto la query per ottenere i dati da database. TODO: [AGGIUNGERE ENDPOINT, CONTROLLER, SERVICE, REPOSITORY]
+A lato backend ho aggiunto la query per ottenere i dati da database.
 
 Manca solo mostrare i dati e, a tal scopo, ho creato due nuovi React components, \texttt{ReportTable} e \texttt{ReportRow}.\\
 Il primo racchiude la struttura della tabella, con tanto di header, mentre il secondo costituisce un riga della stessa. A seconda di quanti elementi saranno ottenuti dal backend, \texttt{ReportTable} chiamerà \texttt{ReportRow} un numero adeguato di volte, creando una tabella.

@@ -107,7 +107,7 @@
                                         % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
                                         % 4. compilare due volte tesi.tex.
 
-\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
+\usepackage[backend=biber,style=verbose-ibid,hyperref,backref, sorting=none]{biblatex}
                                         % eccellente pacchetto per la bibliografia; 
                                         % produce uno stile di citazione autore-anno; 
                                         % lo stile "numeric-comp" produce riferimenti numerici
@@ -149,5 +149,6 @@
 % Materiale finale
 %**************************************************************
 \backmatter
+\input{inizio-fine/bibliografia.tex}
 
 \end{document}
