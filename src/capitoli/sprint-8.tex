@@ -3,12 +3,12 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Sprint 8}
-\label{cap:sprint8}
+\section{Sprint 8}
+\label{sec:sprint8}
 %**************************************************************
 
 %**************************************************************
-\section{User stories assegnate}
+\subsection{User stories assegnate}
 \paragraph{Visualizzazione grafico (8)} \mbox{} \\[\baselineskip]
 Come utente autenticato che si trova nella sezione “Reports”, voglio poter vedere un istogramma che rappresenti graficamente i dati contenuti nella tabella.\\
 
@@ -18,7 +18,7 @@ Come utente autenticato che si trova nella sezione “Reports”, voglio poter v
   \item implementare il grafico.
 \end{itemize}
 
-\section{Visualizzazione grafico}
+\subsection{Visualizzazione grafico}
 Per quanto riguarda la ricerca ho fatto un foglio Google simile a quello già fatto per i datepicker in cui ho raggruppato le librerie che mi sembravano migliori per svolgere l'incarico assegnato:
 
 \begin{itemize}
@@ -35,7 +35,7 @@ La scelta finale è ricaduta su Chart.js in quanto il grafico da produrre era mo
 
 L'implementazione del grafico si è rivelata infatti piuttosto semplice, dovendo solo dichiarare delle variabili per i dati da mostrare e per delle opzioni aggiuntive del grafico:
 
-\begin{code}[frame=tb,title={Esempio di utilizzo di Chart.js}]
+\begin{code}[frame=tb, label={code:chart}, caption={Esempio di utilizzo di Chart.js}]\\
 1   /*Opzioni aggiuntive del grafico*/
 2   const options = {
 3     responsive: true,
@@ -61,5 +61,11 @@ L'implementazione del grafico si è rivelata infatti piuttosto semplice, dovendo
 
 \noindent Anche la struttura di come venivano restituiti i dati non è risultata problematica nè per i visualizzare i dati raggruppati nè per quelli non raggruppati.
 
-\section{Sprint review}
-Essendo la sprint review finale ho dimostrato brevemente le funzionalità sviluppate fino ad ora, ottenendo, anche per quanto riguarda il miglioramento estetico al file PDF assegnatomi lo scorso sprint, un feedback positivo. 
+\subsection{Sprint review}
+Essendo la sprint review finale ho dimostrato brevemente le funzionalità sviluppate fino ad ora, ottenendo, anche per quanto riguarda il miglioramento estetico al file PDF assegnatomi lo scorso sprint, un feedback positivo.\\
+Nella figura \ref{fig:report_chart} viene mostrato il grafico creato durante lo sprint.
+\begin{figure}[H]
+	\includegraphics[width = \textwidth]{immagini/reports chart.png}
+	\caption{Grafico della sezione Reports}
+	\label{fig:report_chart}
+\end{figure}

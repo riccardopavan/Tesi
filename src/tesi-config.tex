@@ -245,7 +245,10 @@
 
 \newcommand{\classdesc}[2]{\item[\textbf{#1:}] #2}
 
-\lstnewenvironment{code}[1][]%
+\renewcommand\lstlistlistingname{Elenco degli esempi di codice}
+\renewcommand\lstlistingname{Esempio di codice}
+
+\lstnewenvironment{code}[2][javascript]
 {
     \noindent
     \minipage{\linewidth} 

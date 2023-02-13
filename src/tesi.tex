@@ -61,7 +61,7 @@
                                         % l'ultima lingua (l'italiano) risulta predefinita
 
 \usepackage{bookmark}                   % segnalibri
-
+\usepackage{float}
 \usepackage{caption}                    % didascalie
 
 \usepackage{chngpage,calc}              % centra il frontespizio
@@ -118,6 +118,7 @@
 
 \input{tesi-config}                     % file con le impostazioni personali
 \begin{document}
+
 %**************************************************************
 % Materiale iniziale
 %**************************************************************
@@ -127,22 +128,15 @@
 \input{inizio-fine/sommario}
 \input{inizio-fine/ringraziamenti}
 \input{inizio-fine/indici}
+
 \cleardoublepage
 
 %**************************************************************
 % Materiale principale
 %**************************************************************
 \mainmatter
-\input{capitoli/azienda}
-\input{capitoli/descrizione-stage}             
-\input{capitoli/sprint-1}             
-\input{capitoli/sprint-2}             
-\input{capitoli/sprint-3}             
-\input{capitoli/sprint-4}             
-\input{capitoli/sprint-5}             
-\input{capitoli/sprint-6}             
-\input{capitoli/sprint-7}
-\input{capitoli/sprint-8}
+\input{capitoli/descrizione-stage}
+\input{capitoli/sprint.tex}       
 \input{capitoli/conclusioni}
 
 %**************************************************************

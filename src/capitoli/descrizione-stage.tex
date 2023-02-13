@@ -1,15 +1,31 @@
-% !TEX encoding = UTF-8
-% !TEX TS-program = pdflatex
-% !TEX root = ../tesi.tex
-
-%**************************************************************
 \chapter{Descrizione dello stage}
-\label{cap:descrizionestage}
-%**************************************************************
+\label{cap:azienda}
 
-\section{Il progetto}
+\section{L'azienda}
 
-L'azienda ha già iniziato a sviluppare un'applcazione web, denominata \emph{Timesheet}, desitinata a uso interno, al fine di rendicontare e pianificare le attività dei vari componenti dell'azienda. \\
+\begin{center}
+	\includegraphics[height = 4cm]{wavelop-logo.png}
+\end{center}
+
+\noindent Wavelop S.R.L.S. è un'azienda nata nel 2018 con sede a Treviso che si occupa di consulenza e di progetti web e mobile per piccole e medie imprese e che conta circa 10 dipendenti.\\
+Dal 2020 propone progetti per studenti universitari interessati a un tirocinio formativo che verranno poi  inseriti all'interno di un team di lavoro presso l'azienda.
+
+\section{Modello di svluppo}
+
+Wavelop segue un modello di sviluppo \textit{agile} con metodologia \textit{scrum}. Di seguito le caratteristiche che contraddistinguono questo metodo di lavoro:
+
+\begin{itemize}
+  \item il lavoro viene diviso in archi temporali della durata di una settimana, denominati \textit{sprint};
+  \item all'inizio di ogni \textit{sprint} si tiene lo \textit{sprint planning}, una riunione in cui si chiarisce quali obiettivi, espressi sotto forma di \textit{user stories}, si mira a portare a termine;
+  \item alla conclusione di ogni \textit{sprint} si tiene invece lo \textit{sprint review}, una riunione in cui si discute cosa si è fatto durante lo \textit{sprint}, mostrando i risultati ottenuti, di solito tramite brevi demo;
+  \item l'attività giornaliera inizia con la partecipazione allo \textit{stand-up meeting}, una breve riunione della durata di circa 15 minuti, dove, a turno, ogni membro del team espone brevemente cosa ha fatto il giorno precedente e cosa intende fare oggi, oltre che mettere al corrente tutti di eventuali ostacoli incontrati nello sviluppo.
+\end{itemize}
+
+\noindent Adottare una metodologia di questo tipo permette una comunicazione costante fra i membri del team e i clienti che porta a un tracciamento chiaro e preciso dell'avanzamento del progetto, mettendo subito in evidenza eventuali incomprensioni, permettendo quindi delle correzioni tempestive, in accordo col cliente.
+
+\section{Il progetto di stage}
+\label{sec:progettostage}
+L'azienda ha già iniziato a sviluppare un'applcazione web, denominata \emph{Timesheet}, destinata a uso interno, al fine di rendicontare e pianificare le attività dei vari componenti dell'azienda. \\
 In particolare è già implementata la funzionalità di inserire attività singole nel database. \\
 Manca, invece, la possibilità di mostrare, filtrandole a seconda della volontà dell'utente, le varie attività memorizzate, ottenendo quindi dati utili come la quantità di ore dedicate a un cliente in un determinato arco di tempo. \\
 Queste funzionalità dovranno essere raggruppate nella sezione \emph{Reports} dell'applicazione. \\
@@ -29,7 +45,7 @@ Nel piano di lavoro sono stati redatti requisiti specifici che dovranno essere s
   \item generazione file CSV delle attività filtrate.
 \end{itemize}
 
-\paragraph{Desiderabili} Requisiti a media priorità, non nececssari per il completamento dello stage ma che comunque, se soddisfatti, contribuiscono notevolmente alla buona riuscita del progetto: 
+\paragraph{Desiderabili} Requisiti a media priorità, non necessari per il completamento dello stage ma che comunque, se soddisfatti, contribuiscono notevolmente alla buona riuscita del progetto: 
 
 \begin{itemize}
   \item generazione file PDF delle attività filtrate;
@@ -53,7 +69,7 @@ Sono state inoltre definite delle attività specifiche per ogni settimana di sta
 
 \begin{itemize}
   \item discussione requisiti relativi al sistema da sviluppare con le persone coinvolte nel progetto;
-  \item introduzione alla cultira aziendale;
+  \item introduzione alla cultura aziendale;
   \item formazione sulle tecnologie adottate;
   \item prendere confidenza con la struttura già esistente e assegnazione degli strumenti necessari;
   \item analisi dei requisiti.
@@ -63,7 +79,7 @@ Sono state inoltre definite delle attività specifiche per ogni settimana di sta
 
 \begin{itemize}
   \item analisi dei requisiti;
-  \item progetazione architetturale.
+  \item progettazione architetturale.
 \end{itemize}
 
 \noindent\textbf{Terza settimana - Dall'8 al 13 Agosto}
@@ -89,8 +105,8 @@ Sono state inoltre definite delle attività specifiche per ogni settimana di sta
 
 \subsection{React}
 
-React\footcite{site:react} è una libreria Javascript open-source component-based per creare interfacce utente mantenuta da \emph{Meta}. Adotta l'utilizzo di una sintassi che estende il linguaggio Javascript: il \emph{Javascript Synstax Extension} (JSX), che rende semplice e intuitivo creare i componenti che formano la pagina.\\
-\begin{code}[frame=tb,title={Esempio di utlizzo di codice JSX}]
+React\footcite{site:react} è una libreria Javascript open-source component-based per creare interfacce utente mantenuta da \emph{Meta}. Adotta l'utilizzo di una sintassi che estende il linguaggio Javascript: il \emph{Javascript Synstax Extension} (JSX), che rende semplice e intuitivo creare i componenti che formano la pagina, come mostrato nell'esempio di codice \ref{code:react} .\\
+\begin{code}[frame=tb, label={code:react}, caption={Esempio di utlizzo di codice JSX}]\\  
 1  const name = 'Riccardo Pavan';
 2
 3  const ShowName = () => {
@@ -111,5 +127,5 @@ L'utilizzo di Node.Js permette di utilizzare Javascript anche lato server, perme
 
 \subsection{MongoDB}
 
-MongoDB\footcite{site:mongo} è un \emph{database manaegement system} open-source non relazionale, orientato ai documenti, questi ultimi in formato BSON, simile a JSON.\\
+MongoDB\footcite{site:mongo} è un \emph{database management system} open-source non relazionale, orientato ai documenti, questi ultimi in formato BSON, simile a JSON.\\
 La struttura non relazionale permette una maggiore libertà nello strutturare il database, utile quando si ha a che fare con molti dati molto diversi fra loro e che tendono a cambiare nel tempo.

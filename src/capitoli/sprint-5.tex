@@ -3,11 +3,11 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Sprint 5}
-\label{cap:sprint 5}
+\section{Sprint 5}
+\label{sec:sprint 5}
 %**************************************************************
 
-\section{User stories assegnate}
+\subsection{User stories assegnate}
 \paragraph{Filtro temporale (8)}\mbox{} \\[\baselineskip]
 Come utente autenticato che si trova nella sezione “Reports”, voglio poter filtrare i dati visualizzati in modo che coprano solo un determinato lasso di tempo. In particolare voglio poter visualizzare i dati:
 \begin{itemize}
@@ -16,12 +16,12 @@ Come utente autenticato che si trova nella sezione “Reports”, voglio poter f
   \item del mese corrente; 
   \item dell'anno corrente.
 \end{itemize}
-O, in alternativa, impostare un arco temporale personalizzato, con date di inizio e fine a piacere.\\
+O, in alternativa, impostare un arco temporale personalizzato, con date d'inizio e fine a piacere.\\
 
 \noindent Tasks:
 \begin{itemize}
   \item ricerca su librerie che offrano elementi datepicker consoni ai requisiti;
-  \item implementare il componente del filtro temmporale;
+  \item implementare il componente del filtro temporale;
   \begin{itemize}
     \item implementare il componente principale;
     \item implementare lo stile per il filtro;
@@ -30,11 +30,11 @@ O, in alternativa, impostare un arco temporale personalizzato, con date di inizi
   \item aggiornare la logica di query lato backend.
 \end{itemize} 
 
-\section{Filtro temporale}
-Con il team abbiamo concluso che la soluzione migliore per soddisfare questo requisito fosse l'aggiunta di un semplice bottone che, cliccato, espande un calendario dove l'utente può slezionare la data di inizio e di fine dell'arco temporale per cui vuole filtrare i dati. Inoltre, a fianco al calendario, devono essere presenti delle opzioni per impostare rapidamente gli archi di tempo predefiniti. \\
-Per semplificare le cose ho fatto una breve ricerca su delle librerie che offrissero dei datepicker adatti, finendo col scegliere \texttt{react-date-range}\footcite{site:rdr}. Questa scelta è dovuta principalmente che già di suo permette di soddisfare tutte le problematiche del requisito, eccetto quella di espandere il calendario da un bottone, che comunque è risolvibile in modo piuttosto semplice. È inoltre molto intuitiva e semplice da utlizzare ed è piacevole esteticamente.\\
-Per quanto riguarda il lato backend non ho dovuto fare niente poichè avevo già integrato i parametri \texttt{from} e \texttt{to} nella query al databse, sapendo che sarebbero serviti.\\\\
+\subsection{Filtro temporale}
+Con il team abbiamo concluso che la soluzione migliore per soddisfare questo requisito fosse l'aggiunta di un semplice bottone che, cliccato, espande un calendario dove l'utente può slezionare la data d'inizio e di fine dell'arco temporale per cui vuole filtrare i dati. Inoltre, a fianco al calendario, devono essere presenti delle opzioni per impostare rapidamente gli archi di tempo predefiniti. \\
+Per semplificare le cose ho fatto una breve ricerca su delle librerie che offrissero dei datepicker adatti, finendo col scegliere \texttt{react-date-range}\footcite{site:rdr}. Questa scelta è dovuta principalmente che già di suo permette di soddisfare tutte le problematiche del requisito, eccetto quella di espandere il calendario da un bottone, che comunque è risolvibile in modo piuttosto semplice. È inoltre molto intuitiva e semplice da utilizzare ed è piacevole esteticamente.\\
+Per quanto riguarda il lato backend non ho dovuto fare niente poichè avevo già integrato i parametri \texttt{from} e \texttt{to} nella query al database, sapendo che sarebbero serviti.\\\\
 Infine, ho aggiunto un bottone per confermare i vari filtri per limitare il numero di richieste al backend. In questo modo verrà fatta una sola richiesta una volta che l'utente ha scelto tutti i filtri, invece che una dopo la selezione di ogni filtro.
 
-\section{Sprint review}
+\subsection{Sprint review}
 La sprint review si è conclusa in modo positivo, senza particolari correzioni necessarie. Anche i tempi sono stati rispettati.
