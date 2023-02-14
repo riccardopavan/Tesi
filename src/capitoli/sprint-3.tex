@@ -12,7 +12,7 @@ Utilizzando il documento precedentemente menzionato previste mi sono state asseg
 \noindent Ognuna di esse presenta i seguenti elementi:
 \begin{itemize}
   \item nome della user story;
-  \item un numero intero positivo che indica il "peso" in termini temporali che ci si aspetta che la user story abbia. Questi numeri seguono l'andamento della serie di Fibonacci e sono stati utili per allocare meglio le varie user stories all'interno degli sprint. Questi numeri vanno solitamente da 1 (task da meno di un'ora) a non più di 13 (task per il quale può essere necessaria fino a una settimana); 
+  \item un numero intero positivo che indica il ``peso'' in termini temporali che ci si aspetta che la user story abbia. Questi numeri seguono l'andamento della serie di Fibonacci e sono stati utili per allocare meglio le varie user stories all'interno degli sprint. Questi numeri vanno solitamente da 1 (task da meno di un'ora) a non più di 13 (task per il quale può essere necessaria fino a una settimana); 
   \item breve descrizione di ciò che si deve ottenere una volta conclusa la user story, dal punto di vista dell'utente;
   \item elenco di task, suddivisi tra frontend e backend, che dicono in modo più specifico e tecnico cosa fare per concludere la user story;
 \end{itemize}
@@ -144,7 +144,7 @@ Al component principale \texttt{Report} ho aggiunto degli \texttt{useState} che 
 \end{itemize}
 Le prime due sono impostate dall'utente mentre per ottenere l'ultima è stato sufficiente aggiungere un campo \texttt{count} all'oggetto restituito dalla query precedentemente fatta. Sempre a questa query ho aggiunto due nuovi query params, calcolati lato client:
 \begin{itemize}
-  \item \texttt{skip}: quante entry "saltare" quando vado a richiedere le attività. Corrisponde a 0 se la pagina corrente è la prima, \texttt{currentPage - 1 * maxRows} altrimenti;
+  \item \texttt{skip}: quante entry ``saltare'' quando vado a richiedere le attività. Corrisponde a 0 se la pagina corrente è la prima, \texttt{currentPage - 1 * maxRows} altrimenti;
   \item \texttt{limit}: quante entry posso ottenere al massimo. Corrisponde a \texttt{maxRows}.
 \end{itemize}
 
