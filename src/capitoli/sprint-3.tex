@@ -19,7 +19,7 @@ Utilizzando il documento precedentemente menzionato previste mi sono state asseg
 I quali verranno presentati nella forma:
 
 \paragraph{Nome user story (Tempo previsto per concludere la user story)}\mbox{} \\[\baselineskip]
-\noindent Descrizione dela user story. \\
+\noindent Descrizione della user story. \\
 
 \noindent Tasks:
 
@@ -85,7 +85,7 @@ Per quanto riguarda la logica per la richiesta dei dati ho aggiunto un endpoint 
   \end{itemize}
   \item \texttt{project}
   \begin{itemize}
-    \item \texttt{id}: l'id univoco del progetto a cui l'attività partiene;
+    \item \texttt{id}: l'id univoco del progetto a cui l'attività appartiene;
     \item \texttt{name}: il nome del progetto;
   \end{itemize}
   \item \texttt{client}
@@ -115,7 +115,7 @@ A lato backend ho aggiunto la query per ottenere i dati da database.
 Manca solo mostrare i dati e, a tal scopo, ho creato due nuovi React components, \texttt{ReportTable} e \texttt{ReportRow}.\\
 Il primo racchiude la struttura della tabella, con tanto di header, mentre il secondo costituisce una riga della stessa. A seconda di quanti elementi saranno ottenuti dal backend, \texttt{ReportTable} chiamerà \texttt{ReportRow} un numero adeguato di volte, creando una tabella.
 
-\subsection{Paginazone della tabella}
+\subsection{Paginazione della tabella}
 
 Ora la tabella è visibile, ma per evitare lunghi scroll verticali è necessario creare una funzionalità di paginazione, suddividendo quindi la tabella in parti più piccole, navigabili tramite una apposita interfaccia.\\
 Sono possibili diverse implementazioni per una funzionalità di questo tipo, in particolare:

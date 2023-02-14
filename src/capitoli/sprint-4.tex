@@ -9,7 +9,7 @@
 
 \subsection{User stories assegnate}
 \paragraph{Filtri utente, cliente, progetto e task (rispettivamente 5, 2, 2 e 2)}\mbox{} \\[\baselineskip]
-\noindent Come utente autenticato che si trova nella sezione “Reports”, voglio poter scegliere uno o più utenti, clienti, progetti o task, anche contemporaneamente, e visualizzare le ore lavorative spese dal'utente o dedicate al cliente/progetto/task.\\
+\noindent Come utente autenticato che si trova nella sezione “Reports”, voglio poter scegliere uno o più utenti, clienti, progetti o task, anche contemporaneamente, e visualizzare le ore lavorative spese dall'utente o dedicate al cliente/progetto/task.\\
 
 \noindent Tasks:
 
@@ -25,7 +25,7 @@
 \subsection{Filtri utente, cliente, progetto e task}
 \noindent A ciò che ho già fatto, è richiesto di aggiungere una toolbar, posizionata sopra la tabella, che permetta all'utente, tramite dei menù a tendina, di filtrare i dati che vengono mostrati, in particolare utenti, clienti, progetti e task. \\
 Innanzitutto ho creato il component principale \texttt{ReportFilter} contenente la toolbar e i vari filtri. \\
-Per creare elementi grafici come input, select, button ho utilizzato una librera grafica React già utilizzata nel resto della applicazione: MUI\footcite{site:mui}. In questo modo, oltre a mantenere una consistenza di stile con il rest della app, è risultato più facile interagire con questi elementi grafici (come tenere traccia di quali elementi sono selezionati nei select).\\
+Per creare elementi grafici come input, select, button ho utilizzato una libreria grafica React già utilizzata nel resto della applicazione: MUI\footcite{site:mui}. In questo modo, oltre a mantenere una consistenza di stile con il resto della app, è risultato più facile interagire con questi elementi grafici (come tenere traccia di quali elementi sono selezionati nei select).\\
 Successivamente, erano necessarie delle nuove richieste al backend per ottenere le liste di tutti gli utenti, clienti, progetti e task da mostrare nei rispettivi filtri. I vari endpoint erano già presenti, non ho quindi dovuto ancora toccare il backend per le richieste.\\
 Avendo tutti i dati necessari, è stato sufficiente renderli disponibili al component principale \texttt{Reports} in modo da poterli usare nella richiesta per i dati già implementata. In particolare ho aggiunto i seguenti queryparams:
 \begin{itemize}
